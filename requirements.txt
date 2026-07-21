@@ -8,7 +8,7 @@ Leafmap: 0.63.0
 Shapely: 2.1.2
 SciPy:   1.16.3
 Earth Engine (ee): 1.7.32
-Geemap:           0.38.2
+Geemap: 0.38.2
 Scikit-Learn: 1.6.1
 Joblib: 1.5.3
 Matplotlib: 3.10.0
