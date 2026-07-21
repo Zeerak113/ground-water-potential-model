@@ -2,11 +2,11 @@
 
 An end-to-end geospatial machine learning project whose core objective is to generate a 2D groundwater potential grid map of the Potohar Plateau/Punjab region. The pipeline achieves this by training a predictive model on historical survey data and satellite-derived surface metrics, surfacing the final inference engine through a local API endpoint.
 
-##  The Real Life Challenge
+## The Real Life Challenges
 In drought-prone regions like the Potohar Plateau and Punjab, communities and farmers face severe water security risks. Traditional hydrological surveys often rely on expensive, blind physical drilling with low success rates, driving up exploration costs and wasting resources in areas with zero groundwater potential. This is where Machine learning can help by utilizing past datasets such as the one used for this model along with remote sensing datasets to generate maps and accurately point towards viable geological aquifers.
 
 ---
-##  Project Overview
+## Project Overview
 This repository demonstrates a complete, end-to-end machine learning workflow. By combining a century of historical regional groundwater measurements with modern remote sensing data, the pipeline extracts key environmental features and trains a Random Forest classifier. The ultimate goal of this pipeline is the spatial rendering of a 2D grid matrix to map localized aquifer potential across structurally complex terrain.
 
 ---
@@ -19,17 +19,17 @@ The pipeline is split into distinct steps, transitioning from raw historical log
 
 2. **`gee_feature`**: Programmatic connection to the Google Earth Engine (GEE) API using `geemap`. This stage extracts target topographic features including Elevation (`NASADEM`), Slope, Topographic Position Index (TPI), and soil textures (USDA surface and subsurface classes) based on geographic coordinates.
 3. **`training_the_model`**: Preprocessing of the combined geospatial dataset and optimization of a Random Forest classification model using `scikit-learn`.
-4. **`2d_grid_generator`**: Interpolation logic using scipy grid interpolator,nearest method that sets up a 2-dimensional inference grid across the targeted regional zones along with matplotlib to generate continuous spatial asset maps. 
+4. **`2d_grid_generator`**: Interpolation logic using scipy griddata interpolator with method selected as nearest that sets up a 2-dimensional inference grid across the targeted regional zones along with matplotlib to generate continuous spatial asset maps. 
 5. **Model Deployment (`app.py`)**: A local API service built with **FastAPI** and **Uvicorn** to serve instant model predictions.
 
 ---
 ## Dataset overview
 
 **Raw Input:** Ingested the official British Geological Survey (BGS) dataset (`India_Pakistan_WL_NGDC.xlsx`), containing **68,782 historical observation logs** across 4,028 monitoring wells spanning 1884–2020.
-   - **Spatial Filtering & Aggregation:** Filtered raw coordinates specifically to the Punjab / Potohar Plateau region ( Longitude 71.50 - 74.00 ,   Latitude29.09 - 32.50 ) and aggregated temporal measurements into mean water table depths (`WL_MBGL`).
+   - **Spatial Filtering & Aggregation:** Filtered raw coordinates specifically to the Punjab / Potohar Plateau region ( Longitude 71.50 - 74.00 ,   Latitude 29.09 - 32.50 ) and aggregated temporal measurements into mean water table depths (`WL_MBGL`).
    - **Pseudo-Absence Modeling:** Applied **KD-Tree spatial distance modeling** to generate 1,197 balanced zero-potential (absence) points across non-aquifer bedrock zones.
    - **Final Dataset & Features:** Produced a clean, balanced dataset (`Final_Punjab_And_Potohar_Training_Data.csv`) of **2,725 spatial samples** (1,528 Class 1 vs. 1,197 Class 0). Attributes include:
-     - 'LONG` & `LAT`
+     - 'LONG' & 'LAT'
      - `elevation`
      - `slope`
      - `tpi`
@@ -93,17 +93,12 @@ The ability to accurately categorize groundwater potential zones using remote se
 The model deployment is built using FastAPI and Pydantic validation to serve as a functional proof of an end-to-end machine learning system. 
 
 ### . Run the API locally
-Ensure you have your dependencies installed, then launch the Uvicorn server by running app.py
-
-# Clone the repository
-git clone https://github.com/Zeerak113/ground-water-potential-model.git
-cd ground-water-potential-model
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Launch the FastAPI app
-python app.py
+E. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/Zeerak113/ground-water-potential-model.git](https://github.com/Zeerak113/ground-water-potential-model.git)
+   cd ground-water-potential-model
+   pip install -r requirements.txt
+   python app.py
 
 <img width="1637" height="726" alt="swaggerui-1" src="https://github.com/user-attachments/assets/e7d5fb16-29b1-4f7c-b05d-118be9cfba9b" />
 <img width="1518" height="753" alt="swaggerui-3" src="https://github.com/user-attachments/assets/1586757f-43f4-4873-8c1c-8e4d3c4ed742" />
