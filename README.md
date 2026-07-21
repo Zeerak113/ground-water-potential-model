@@ -1,5 +1,4 @@
-# Groundwater 2d potential for Punjab/Potohar area.
-
+# Groundwater 2d Potential Mapping: Punjab/Potohar area.
 An end-to-end geospatial machine learning project whose core objective is to generate a 2D groundwater potential grid map of the Potohar Plateau/Punjab region. The pipeline achieves this by training a predictive model on historical survey data and satellite-derived surface metrics, surfacing the final inference engine through a local API endpoint.
 
 ## The Real Life Challenges
@@ -64,7 +63,7 @@ Here are the importances of the features.
 ---
 ## Continuous Spatial Grid Output
 
-This is the 2d generated grid. It's a continous map of Voronoi Patchwork appearance because of the nearet method utilized. The prediction probabilities were used for this instead of binary predictions.
+This is the 2d generated grid. It's a continous map of Voronoi Patchwork appearance because of the Griddata interpolator's nearest method. The prediction probabilities were used for this instead of binary predictions.
 <img width="2475" height="2179" alt="groundwater_potential_map" src="https://github.com/user-attachments/assets/a14f9e5b-f756-4bde-8876-a59f69d1492c" />
 
 
