@@ -94,6 +94,17 @@ The model deployment is built using FastAPI and Pydantic validation to serve as 
 
 ### . Run the API locally
 Ensure you have your dependencies installed, then launch the Uvicorn server by running app.py
+
+# Clone the repository
+git clone https://github.com/Zeerak113/ground-water-potential-model.git
+cd ground-water-potential-model
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Launch the FastAPI app
+python app.py
+
 <img width="1637" height="726" alt="swaggerui-1" src="https://github.com/user-attachments/assets/e7d5fb16-29b1-4f7c-b05d-118be9cfba9b" />
 <img width="1518" height="753" alt="swaggerui-3" src="https://github.com/user-attachments/assets/1586757f-43f4-4873-8c1c-8e4d3c4ed742" />
 <img width="1515" height="581" alt="swaggerui-2" src="https://github.com/user-attachments/assets/154ad3a1-73d8-494f-8986-78a642b61603" />
