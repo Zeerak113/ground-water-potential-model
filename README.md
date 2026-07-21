@@ -26,7 +26,7 @@ The pipeline is split into distinct steps, transitioning from raw historical log
 ## Dataset overview
 
 **Raw Input:** Ingested the official British Geological Survey (BGS) dataset (`India_Pakistan_WL_NGDC.xlsx`), containing **68,782 historical observation logs** across 4,028 monitoring wells spanning 1884–2020.
-   - **Spatial Filtering & Aggregation:** Filtered raw coordinates specifically to the Punjab / Potohar Plateau region ([Longitude] 71.50 - 74.00 , [Latitude]29.09 - 32.50 ) and aggregated temporal measurements into mean water table depths (`WL_MBGL`).
+   - **Spatial Filtering & Aggregation:** Filtered raw coordinates specifically to the Punjab / Potohar Plateau region ( Longitude 71.50 - 74.00 ,   Latitude29.09 - 32.50 ) and aggregated temporal measurements into mean water table depths (`WL_MBGL`).
    - **Pseudo-Absence Modeling:** Applied **KD-Tree spatial distance modeling** to generate 1,197 balanced zero-potential (absence) points across non-aquifer bedrock zones.
    - **Final Dataset & Features:** Produced a clean, balanced dataset (`Final_Punjab_And_Potohar_Training_Data.csv`) of **2,725 spatial samples** (1,528 Class 1 vs. 1,197 Class 0). Attributes include:
      - 'LONG` & `LAT`
@@ -56,15 +56,15 @@ By optimizing hyperparameters, the model's sensitivity (**Recall**) improved dra
 ### 2. Key Feature Importance
 Here are the importances of the features.
 1. **TPI (Topographic Position Index):** Primary indicator for identifying catchment depressions, valleys, and drainage lines where water naturally accumulates.
-2. **Eelevation :** Critical baseline terrain metric influencing hydrostatic pressure and regional runoff.
+2. **Elevation :** Critical baseline terrain metric influencing hydrostatic pressure and regional runoff.
 3. **Slope:** Governs surface runoff velocity versus water infiltration rates into underlying aquifers
 4. **Soil_subsurface :** Determines deeper soil permeability and groundwater percolation capability.
-5. **Soil_surface : ** Dictates immediate surface runoff absorption and initial water infiltration rates.
+5. **Soil_surface :** Dictates immediate surface runoff absorption and initial water infiltration rates.
 
 ---
 ## Continuous Spatial Grid Output
 
-This is the 2d generated grid. It's a continous map of Voronoi Patchwork appearance because of the nearet method utilized. 
+This is the 2d generated grid. It's a continous map of Voronoi Patchwork appearance because of the nearet method utilized. The prediction probabilities were used for this instead of binary predictions.
 <img width="2475" height="2179" alt="groundwater_potential_map" src="https://github.com/user-attachments/assets/a14f9e5b-f756-4bde-8876-a59f69d1492c" />
 
 
