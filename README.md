@@ -93,16 +93,14 @@ The ability to accurately categorize groundwater potential zones using remote se
 The model deployment is built using FastAPI and Pydantic validation to serve as a functional proof of an end-to-end machine learning system. 
 
 ###  Run the API locally
-E. **Clone the repository:**
+ **Clone the repository:**
    ```bash
    git clone [https://github.com/Zeerak113/ground-water-potential-model.git](https://github.com/Zeerak113/ground-water-potential-model.git)
    cd ground-water-potential-model
    pip install -r requirements.txt
+
    python app.py
-
-### Interactive API Interface (Swagger UI)
-
-Once the Uvicorn server is running, navigate to `http://127.0.0.1:8000/docs` in your browser.
+   ```
 
 <img width="1637" height="726" alt="swaggerui-1" src="https://github.com/user-attachments/assets/e7d5fb16-29b1-4f7c-b05d-118be9cfba9b" />
 <img width="1518" height="753" alt="swaggerui-3" src="https://github.com/user-attachments/assets/1586757f-43f4-4873-8c1c-8e4d3c4ed742" />
