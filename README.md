@@ -81,7 +81,7 @@ The ability to accurately categorize groundwater potential zones using remote se
 
 ##  Tech Stack & Frameworks
 
-- **Data Engineering & GIS:** `pandas`, `geopandas`, `geemap`, Google Earth Engine API
+- **Data Engineering & GIS:** `pandas`, `geopandas`, `geemap`, 'Google Earth Engine API', 'scipy', 'leafmap' , 'shapely'
 - **Machine Learning:** `scikit-learn`, `joblib`
 - **Model Deployment:** `FastAPI`, `Uvicorn`, `Pydantic`
 
